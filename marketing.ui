@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Marketing</class>
+ <widget class="QDialog" name="Marketing">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>358</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Marketing</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>10</y>
+     <width>771</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="Publicite">
+    <widget class="QPushButton" name="pushButton_SP_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>300</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Sponsor</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Pb_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>300</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Publicite</string>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="tabWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>771</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MV Boli&quot;;</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Ajout_2">
+      <attribute name="title">
+       <string>Ajout</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>10</y>
+         <width>641</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Ajouter Publicité</string>
+       </property>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>81</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>13</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>ID_PUB</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>30</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>numero</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>70</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>ID_SP</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>170</y>
+          <width>61</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>TYPE</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_idpub">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_num_2">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_description">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_type">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>130</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajoutPub">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>170</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Ajouter </string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_logo">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>140</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>logo</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_video">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>180</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>video</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_sript">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>210</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>script</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Consulter_2">
+      <attribute name="title">
+       <string>Consulter</string>
+      </attribute>
+      <widget class="QPushButton" name="pushButton_afficherPub">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>220</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 15pt &quot;MV Boli&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>Afficher Publicité</string>
+       </property>
+      </widget>
+      <widget class="QTableView" name="tableView_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>721</width>
+         <height>191</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Supprimer_2">
+      <attribute name="title">
+       <string>Supprimer</string>
+      </attribute>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>90</y>
+         <width>211</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+       </property>
+       <property name="text">
+        <string>Identifiant Publicité</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_supp_2">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>100</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_supprimerPub">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>160</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 15pt &quot;MV Boli&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>621</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Supprimer une Publicité</string>
+       </property>
+      </widget>
+      <zorder>groupBox_3</zorder>
+      <zorder>label_12</zorder>
+      <zorder>lineEdit_supp_2</zorder>
+      <zorder>pushButton_supprimerPub</zorder>
+     </widget>
+     <widget class="QWidget" name="Modifier_2">
+      <attribute name="title">
+       <string>Modifier</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>641</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Modifier Publicité</string>
+       </property>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>81</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>13</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>ID_PUB</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>30</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>numero</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>70</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_23">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>ID_SP</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>130</y>
+          <width>61</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>TYPE</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_idpub_Edit">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_num2Edit">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_descriptionEdit">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_IDsp2_Edit">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_typeEdit">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>130</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_editPub">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>170</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>310</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(185, 142, 42);
+font: 75 12pt &quot;Adobe Gothic Std B&quot;;</string>
+     </property>
+     <property name="text">
+      <string>PUBLICITE</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Sponsor">
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>771</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;MV Boli&quot;;</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Ajout">
+      <attribute name="title">
+       <string>Ajout</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>10</y>
+         <width>641</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Ajouter Sponsor</string>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>ID_SP</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>30</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>numero</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>70</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>Budget</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>adresse</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>130</y>
+          <width>61</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_idsp">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_num">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_budget">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_adresse">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nom">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>130</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajoutSP">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>200</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;MV Boli&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Ajouter </string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Consulter">
+      <attribute name="title">
+       <string>Consulter</string>
+      </attribute>
+      <widget class="QPushButton" name="pushButton_affichersp">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>220</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 15pt &quot;MV Boli&quot;;
+</string>
+       </property>
+       <property name="text">
+        <string>Afficher Sponsor</string>
+       </property>
+      </widget>
+      <widget class="QTableView" name="tableView">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>721</width>
+         <height>191</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Supprimer">
+      <attribute name="title">
+       <string>Supprimer</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>10</y>
+         <width>621</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Supprimer une Publicité</string>
+       </property>
+       <widget class="QLineEdit" name="lineEdit_supp">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>90</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_supprimer">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>150</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 15pt &quot;MV Boli&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>80</y>
+          <width>201</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;MV Boli&quot;;
+color: rgb(185, 142, 42);</string>
+        </property>
+        <property name="text">
+         <string>Identifiant Sponsor</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Modifier">
+      <attribute name="title">
+       <string>Modifier</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>641</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Adobe Gothic Std B&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string>Modifier Sponsor</string>
+       </property>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>ID_SP</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>30</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>numero</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>70</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>Budget</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>70</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>adresse</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_19">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>130</y>
+          <width>61</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;MV Boli&quot;;
+color: rgb(212, 175, 55);</string>
+        </property>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_idspEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_numEdit">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_budgetEdit">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_adresseEdit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nomEdit">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>130</y>
+          <width>113</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_modifierSP">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>200</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;MV Boli&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>UPDATE</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Pb">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>300</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Publicité</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SP">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>300</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;MV Boli&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Sponsor</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>310</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(185, 142, 42);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Sponsor</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
