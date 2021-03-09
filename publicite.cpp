@@ -33,6 +33,13 @@ bool Publicite::ajouter_publicite()
     return    query.exec();
 
 }
+QSqlQueryModel * Publicite::afficher_idPub()
+{QSqlQueryModel * model= new QSqlQueryModel();
+model->setQuery("SELECT ID_PUB from PUBLICITE");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PUB"));
+
+    return model;
+}
 QSqlQueryModel * Publicite::afficher_publicite()
 {QSqlQueryModel * model= new QSqlQueryModel();
 model->setQuery("select * from PUBLICITE");

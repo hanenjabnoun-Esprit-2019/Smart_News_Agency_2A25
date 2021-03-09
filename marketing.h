@@ -3,6 +3,9 @@
 #include "sponsor.h"
 #include <QDialog>
 #include "publicite.h"
+#include <QLabel>
+
+
 namespace Ui {
 class Marketing;
 }
@@ -48,6 +51,7 @@ private:
     Ui::Marketing *ui;
     Sponsor tmpsponsor;
     Publicite tmppuclicite;
+
 
 };
 

@@ -31,7 +31,7 @@ public:
     QSqlQueryModel *afficher_sponsor();
     bool supprimer_sponsor(int);
     bool modifier_sponsor();
-    QSqlQueryModel *afficher_id();
+    QSqlQueryModel *afficher_idSP();
 
 
 

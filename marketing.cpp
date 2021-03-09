@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <QComboBox>
 #include <QRadioButton>
+
 Marketing::Marketing(QWidget *parent) :
 
     QDialog(parent),
@@ -20,15 +21,18 @@ Marketing::Marketing(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    ui->comboBox_1->setModel(tmpsponsor.afficher_id());
+    ui->comboBox_1->setModel(tmpsponsor.afficher_idSP());
+    ui->comboBox_suppSP->setModel(tmpsponsor.afficher_idSP());
 
-    QIntValidator *idsp= new QIntValidator(1,10000);
-    QIntValidator *num= new QIntValidator(1,100);
-    ui->lineEdit_num->setValidator(num);
-    ui->lineEdit_idsp->setValidator(idsp);
+    ui->comboBox_suppPUB->setModel(tmppuclicite.afficher_idPub());
 
-    ui->lineEdit_idsp->setValidator(new QIntValidator(0,999999,this));
+   //Controle de saisie
+    ui->lineEdit_idsp->setValidator(new QIntValidator(0,999,this));
+    ui->lineEdit_num_2->setValidator(new QIntValidator(0,999,this));
+    ui->lineEdit_num->setValidator(new QIntValidator(0,999,this));
+    ui->lineEdit_idpub->setValidator(new QIntValidator(0,999,this));
 }
+
 
 Marketing::~Marketing()
 {
@@ -62,7 +66,8 @@ void Marketing::on_pushButton_ajoutSP_clicked()
                               QObject::tr("Erreur !.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
             }
-    ui->comboBox_1->setModel(tmpsponsor.afficher_id()); //refresh ComboBox
+    ui->comboBox_1->setModel(tmpsponsor.afficher_idSP()); //refresh ComboBox
+    ui->comboBox_suppSP->setModel(tmpsponsor.afficher_idSP());
 
     foreach(QLineEdit* le, findChildren<QLineEdit*>())
         {le->clear();}                                  //refresh
@@ -77,7 +82,7 @@ void Marketing::on_pushButton_affichersp_clicked()
 
 void Marketing::on_pushButton_supprimer_clicked()
 {
-    int id = ui->lineEdit_supp->text().toInt();
+    int id = ui->comboBox_suppSP->currentText().toInt();
     bool test=tmpsponsor.supprimer_sponsor(id);
     if(test)
     {ui->tableView->setModel(tmpsponsor.afficher_sponsor());//refresh
@@ -90,8 +95,9 @@ void Marketing::on_pushButton_supprimer_clicked()
         QMessageBox::critical(nullptr, QObject::tr("Supprimer un Sponsor"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
-    foreach(QLineEdit* le, findChildren<QLineEdit*>())
-        {le->clear();}
+
+    ui->comboBox_suppSP->setModel(tmpsponsor.afficher_idSP());//Refresh
+
 
 }
 
@@ -134,8 +140,8 @@ void Marketing::on_pushButton_ajoutPub_clicked()
                                           "Click Cancel to exit."), QMessageBox::Cancel);
             }
     this->ui->radioButton_logo->setAutoExclusive(false);
-    this->ui->radioButton_logo->setChecked(false);      //refresh radiobutton
 
+    ui->comboBox_suppPUB->setModel(tmppuclicite.afficher_idPub()); //refresh id_pub
 
 
     foreach(QLineEdit* le, findChildren<QLineEdit*>())
@@ -150,10 +156,10 @@ void Marketing::on_pushButton_afficherPub_clicked()
 
 void Marketing::on_pushButton_supprimerPub_clicked()
 {
-    int id = ui->lineEdit_supp_2->text().toInt();
+    int id = ui->comboBox_suppPUB->currentText().toInt();
     bool test=tmppuclicite.supprimer_publicite(id);
     if(test)
-    {ui->tableView->setModel(tmppuclicite.afficher_publicite());//refresh
+    {ui->tableView_2->setModel(tmppuclicite.afficher_publicite());//refresh
         QMessageBox::information(nullptr, QObject::tr("Supprimer une Publicité"),
                     QObject::tr("Publicitée supprimée.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -163,8 +169,8 @@ void Marketing::on_pushButton_supprimerPub_clicked()
         QMessageBox::critical(nullptr, QObject::tr("Supprimer une Publicité"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
-    foreach(QLineEdit* le, findChildren<QLineEdit*>())
-        {le->clear();}
+    ui->comboBox_suppPUB->setModel(tmppuclicite.afficher_idPub());
+
 }
 
 
@@ -196,7 +202,7 @@ void Marketing::on_pushButton_modifierSP_clicked()
         {le->clear();}
 }
 
-void Marketing::on_tableView_doubleClicked(const QModelIndex &index)
+void Marketing::on_tableView_doubleClicked(const QModelIndex &index) // EDIT SPONSOR
 {
     QString x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),0)).toString();
     ui->lineEdit_idspEdit->setText(x);
@@ -219,7 +225,7 @@ void Marketing::on_tableView_doubleClicked(const QModelIndex &index)
 
 }
 
-void Marketing::on_tableView_2_doubleClicked(const QModelIndex &index)
+void Marketing::on_tableView_2_doubleClicked(const QModelIndex &index) //EDIT PUB
 {
     QString x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),0)).toString();
     ui->lineEdit_idpub_Edit->setText(x);
@@ -246,7 +252,11 @@ void Marketing::on_pushButton_editPub_clicked()
     int id1 = ui->lineEdit_idpub_Edit->text().toInt();
     int id2 = ui->lineEdit_IDsp2_Edit->text().toInt();
     int numero = ui->lineEdit_num2Edit->text().toInt();
-    QString type= ui->lineEdit_typeEdit->text();
+   // QString type= ui->lineEdit_typeEdit->text();
+    QString type;/*= ui->lineEdit_type->text();*/
+    if(ui->radioButton_logoEdit->isChecked()){type="logo";}
+    else if(ui->radioButton_videoEdit->isChecked()){type="video";}
+    else if(ui->radioButton_scriptEdit->isChecked()){type="script";}
     QString des= ui->lineEdit_descriptionEdit->text();
   Publicite P(id1, id2, numero, type, des);
   bool test=P.modifier_publicite();

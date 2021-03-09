@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     Connection C;
-    QFile styleSheetFile("C:/Users/achraf/Desktop/2A25/qt/BestNews/SpyBot.qss");
+    QFile styleSheetFile("C:/Users/achraf/Desktop/2A25/qt/Gestion_Marketing/SpyBot.qss");
         styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet= QLatin1String(styleSheetFile.readAll());
     a.setStyleSheet(styleSheet);

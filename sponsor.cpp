@@ -29,7 +29,7 @@ bool Sponsor::ajouter_sponsor()
     return    query.exec();
 
 }
-QSqlQueryModel * Sponsor::afficher_id()
+QSqlQueryModel * Sponsor::afficher_idSP()
 {QSqlQueryModel * model= new QSqlQueryModel();
 model->setQuery("SELECT ID_SP from SPONSORS");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_SP"));

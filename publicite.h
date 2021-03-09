@@ -32,6 +32,7 @@ public:
     QSqlQueryModel *afficher_publicite();
     bool supprimer_publicite(int);
     bool modifier_publicite();
+    QSqlQueryModel *afficher_idPub();
 
 };
 
