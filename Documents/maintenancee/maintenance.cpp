@@ -191,5 +191,15 @@ void maintenance::on_pb_updatem_clicked()
 
 void maintenance::on_pb_trier_clicked()
 {
+    Equipement E;
+    ui->tab_equipement->setModel(E.trier());
 
+}
+
+
+
+void maintenance::on_pushButton_filtrer_clicked()
+{
+    Equipement E;
+    ui->tab_equipement->setModel(E.filtrer());
 }

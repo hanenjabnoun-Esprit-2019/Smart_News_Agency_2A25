@@ -101,7 +101,36 @@ bool Equipement::modifier_equipement()
 }
 
 
+QSqlQueryModel* Equipement:: trier()
+{
 
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from EQUIPEMENT order by PRIX ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
+     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMBRE"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("PRIX"));
+      model->setHeaderData(1, Qt::Horizontal, QObject::tr("ETAT"));
+      model->setHeaderData(1, Qt::Horizontal, QObject::tr("MARQUE"));
+
+
+    return model;
+}
+QSqlQueryModel* Equipement:: filtrer()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from EQUIPEMENT order by TYPE ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
+     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMBRE"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("PRIX"));
+      model->setHeaderData(1, Qt::Horizontal, QObject::tr("ETAT"));
+      model->setHeaderData(1, Qt::Horizontal, QObject::tr("MARQUE"));
+
+
+    return model;
+}
 
 
 

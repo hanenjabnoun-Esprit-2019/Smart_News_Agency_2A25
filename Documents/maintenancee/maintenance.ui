@@ -36,7 +36,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Ajouter">
       <attribute name="title">
@@ -231,10 +231,10 @@
         </rect>
        </property>
        <property name="text">
-        <string>Trier</string>
+        <string>Trier Prix</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_8">
+      <widget class="QPushButton" name="pushButton_filtrer">
        <property name="geometry">
         <rect>
          <x>530</x>
@@ -244,7 +244,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Filtrer</string>
+        <string>Filtrer Type</string>
        </property>
       </widget>
      </widget>

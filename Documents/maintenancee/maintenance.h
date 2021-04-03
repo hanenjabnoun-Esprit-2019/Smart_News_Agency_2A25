@@ -35,6 +35,10 @@ private slots:
 
     void on_pb_trier_clicked();
 
+
+
+    void on_pushButton_filtrer_clicked();
+
 private:
     Ui::maintenance *ui;
 };
