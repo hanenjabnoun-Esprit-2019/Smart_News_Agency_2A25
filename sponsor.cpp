@@ -70,3 +70,69 @@ bool Sponsor::modifier_sponsor()
     return    query.exec();
 
 }
+QSqlQueryModel * Sponsor::Search_sponsor(QString input)
+{
+    QSqlQuery query;
+    QSqlQueryModel *model = new QSqlQueryModel();
+
+    query.prepare("SELECT * FROM SPONSORS WHERE ID_SP LIKE ? OR BUDGET LIKE ? OR NOM LIKE ?");
+    query.addBindValue("%"+input+"%");
+    query.addBindValue("%"+input+"%");
+    query.addBindValue("%"+input+"%");
+
+    if(query.exec())
+    {
+        model->setQuery(query);
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_SP"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("NUMERO"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOM"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("ADRESSE"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("BUDGET"));
+
+
+    }
+    return model;
+}
+
+int Sponsor::sendMail() {
+       SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
+
+       smtp.setUser("achraf.zarroug@esprit.tn");
+       smtp.setPassword("achraf.rbii3a");
+
+       MimeMessage message;
+
+       EmailAddress sender("achraf.zarroug@esprit.tn", "BESTNEWS");
+       message.setSender(&sender);
+
+       EmailAddress to("achraf.zarroug@esprit.tn", "Admin");
+       message.addRecipient(&to);
+
+       message.setSubject("Sponsor ajoute ");
+
+       MimeText text;
+
+       QString res= QString::number(this->numero);
+       text.setText("Nom: "+this->nom+", Numero: "+res+", Adresse: "+this->adresse+", Budget: "+this->budget);
+
+       message.addPart(&text);
+
+       if (!smtp.connectToHost()) {
+           qDebug() << "Failed to connect to host!" << endl;
+           return -1;
+       }
+
+       if (!smtp.login()) {
+           qDebug() << "Failed to login!" << endl;
+           return -2;
+       }
+
+       if (!smtp.sendMail(message)) {
+           qDebug() << "Failed to send mail!" << endl;
+           return -3;
+       }
+
+       smtp.quit();
+
+       return 1;
+}

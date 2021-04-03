@@ -76,3 +76,62 @@ bool Publicite::modifier_publicite()
     return    query.exec();
 
 }
+QSqlQueryModel * Publicite::rechercher_id(int id)
+{QSqlQueryModel * model= new QSqlQueryModel();
+ QString res= QString::number(id);
+    
+model->setQuery("select * from PUBLICITE where ID_PUB =:id");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PUB"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_SPONSOR "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMERO"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("TYPE"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("DESCRIPTION"));
+
+    return model;
+}
+QSqlQueryModel * Publicite::Search_pub(QString input)
+{
+    QSqlQuery query;
+    QSqlQueryModel *model = new QSqlQueryModel();
+
+    query.prepare("SELECT * FROM PUBLICITE WHERE ID_PUB LIKE ? OR NUMERO LIKE ? OR TYPE LIKE ?");
+    query.addBindValue("%"+input+"%");
+    query.addBindValue("%"+input+"%");
+    query.addBindValue("%"+input+"%");
+
+    if(query.exec())
+    {
+        model->setQuery(query);
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PUB"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_SPONSOR"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMERO"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("TYPE"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("DESCRIPTION"));
+
+
+    }
+    return model;
+}
+
+QSqlQueryModel * Publicite::tri_pub(QString input)
+{
+    QSqlQuery query;
+    QSqlQueryModel *model = new QSqlQueryModel();
+
+    query.prepare("SELECT * FROM PUBLICITE ORDER BY "+input+" ASC");
+
+    if(query.exec())
+    {
+        model->setQuery(query);
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_PUB"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_SPONSOR"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMERO"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("TYPE"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("DESCRIPTION"));
+
+
+    }
+    return model;
+}
+
+

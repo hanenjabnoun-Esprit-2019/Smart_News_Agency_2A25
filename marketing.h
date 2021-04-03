@@ -45,7 +45,11 @@ private slots:
 
     void on_pushButton_editPub_clicked();
 
-    void on_comboBox_idpb2_currentIndexChanged(const QString &arg1);
+    void on_recherche_textChanged(const QString &arg1);
+
+    void on_recherche_sponsor_textChanged(const QString &arg1);
+
+    void on_comboBox_tri_pub_currentTextChanged(const QString &arg1);
 
 private:
     Ui::Marketing *ui;

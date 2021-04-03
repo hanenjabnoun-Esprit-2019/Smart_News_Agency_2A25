@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDialog>
+#include "src/SmtpMime"
 
 class Sponsor
 {
@@ -32,6 +33,8 @@ public:
     bool supprimer_sponsor(int);
     bool modifier_sponsor();
     QSqlQueryModel *afficher_idSP();
+    QSqlQueryModel *Search_sponsor(QString input);
+    int sendMail();
 
 
 

@@ -31,6 +31,10 @@ Marketing::Marketing(QWidget *parent) :
     ui->lineEdit_num_2->setValidator(new QIntValidator(0,999,this));
     ui->lineEdit_num->setValidator(new QIntValidator(0,999,this));
     ui->lineEdit_idpub->setValidator(new QIntValidator(0,999,this));
+
+    ui->comboBox_tri_pub->addItem("NUMERO");
+    ui->comboBox_tri_pub->addItem("TYPE");
+    ui->comboBox_tri_pub->addItem("DESCRIPTION");
 }
 
 
@@ -59,7 +63,8 @@ void Marketing::on_pushButton_ajoutSP_clicked()
             QMessageBox::information(nullptr, QObject::tr("Ajouter un Sponsor"),
                               QObject::tr("Sponsor ajouté.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
-            }
+           S.sendMail();
+    }
     else
             {
             QMessageBox::critical(nullptr, QObject::tr("Ajouter un Sponsor"),
@@ -279,7 +284,22 @@ void Marketing::on_pushButton_editPub_clicked()
         {le->clear();}
 }
 
-void Marketing::on_comboBox_idpb2_currentIndexChanged(const QString &arg1)
-{
 
+
+void Marketing::on_recherche_textChanged(const QString &arg1)
+{
+  //  QString input = ui->recherche->text();
+        ui->tableView_2->setModel(tmppuclicite.Search_pub(arg1));
+}
+
+void Marketing::on_recherche_sponsor_textChanged(const QString &arg1)
+{
+  //  QString input2 = ui->rechercher_SP->text();
+
+        ui->tableView->setModel(tmpsponsor.Search_sponsor(arg1));
+}
+
+void Marketing::on_comboBox_tri_pub_currentTextChanged(const QString &arg1)
+{
+    ui->tableView_2->setModel(tmppuclicite.tri_pub(arg1));
 }

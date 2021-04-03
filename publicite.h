@@ -5,10 +5,8 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDialog>
-
 class Publicite
 {
-
     QString description,type;
     int id_sp,id_pub,numero;
 public:
@@ -33,6 +31,10 @@ public:
     bool supprimer_publicite(int);
     bool modifier_publicite();
     QSqlQueryModel *afficher_idPub();
+    QSqlQueryModel *rechercher_id(int);
+    QSqlQueryModel *Search_pub(QString input);
+    QSqlQueryModel *tri_pub(QString input);
+
 
 };
 
