@@ -39,10 +39,6 @@ private slots:
 
     void on_pushButton_modifierSP_clicked();
 
-    void on_tableView_doubleClicked(const QModelIndex &index);
-
-    void on_tableView_2_doubleClicked(const QModelIndex &index);
-
     void on_pushButton_editPub_clicked();
 
     void on_recherche_textChanged(const QString &arg1);
@@ -50,6 +46,10 @@ private slots:
     void on_recherche_sponsor_textChanged(const QString &arg1);
 
     void on_comboBox_tri_pub_currentTextChanged(const QString &arg1);
+
+    void on_tableView_sponsor_doubleClicked(const QModelIndex &index);
+
+    void on_tableView_pub_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::Marketing *ui;

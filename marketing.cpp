@@ -80,7 +80,7 @@ void Marketing::on_pushButton_ajoutSP_clicked()
 
 void Marketing::on_pushButton_affichersp_clicked()
 {
-    ui->tableView->setModel(tmpsponsor.afficher_sponsor());
+    ui->tableView_sponsor->setModel(tmpsponsor.afficher_sponsor());
 
 
 }
@@ -90,7 +90,7 @@ void Marketing::on_pushButton_supprimer_clicked()
     int id = ui->comboBox_suppSP->currentText().toInt();
     bool test=tmpsponsor.supprimer_sponsor(id);
     if(test)
-    {ui->tableView->setModel(tmpsponsor.afficher_sponsor());//refresh
+    {ui->tableView_sponsor->setModel(tmpsponsor.afficher_sponsor());//refresh
         QMessageBox::information(nullptr, QObject::tr("Supprimer un Sponsor"),
                     QObject::tr("Sponsor supprimé.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -155,7 +155,7 @@ void Marketing::on_pushButton_ajoutPub_clicked()
 
 void Marketing::on_pushButton_afficherPub_clicked()
 {
-    ui->tableView_2->setModel(tmppuclicite.afficher_publicite());
+    ui->tableView_pub->setModel(tmppuclicite.afficher_publicite());
 
 }
 
@@ -164,7 +164,7 @@ void Marketing::on_pushButton_supprimerPub_clicked()
     int id = ui->comboBox_suppPUB->currentText().toInt();
     bool test=tmppuclicite.supprimer_publicite(id);
     if(test)
-    {ui->tableView_2->setModel(tmppuclicite.afficher_publicite());//refresh
+    {ui->tableView_pub->setModel(tmppuclicite.afficher_publicite());//refresh
         QMessageBox::information(nullptr, QObject::tr("Supprimer une Publicité"),
                     QObject::tr("Publicitée supprimée.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -194,7 +194,7 @@ void Marketing::on_pushButton_modifierSP_clicked()
                               QObject::tr("Sponsor Modifier.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
             ui->tabWidget_2->setCurrentIndex(1);
-            ui->tableView->setModel(tmpsponsor.afficher_sponsor());
+            ui->tableView_sponsor->setModel(tmpsponsor.afficher_sponsor());
             }
     else
             {
@@ -205,51 +205,6 @@ void Marketing::on_pushButton_modifierSP_clicked()
 
     foreach(QLineEdit* le, findChildren<QLineEdit*>())
         {le->clear();}
-}
-
-void Marketing::on_tableView_doubleClicked(const QModelIndex &index) // EDIT SPONSOR
-{
-    QString x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),0)).toString();
-    ui->lineEdit_idspEdit->setText(x);
-
-     x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),1)).toString();
-     ui->lineEdit_numEdit->setText(x);
-
-     x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),2)).toString();
-     ui->lineEdit_nomEdit->setText(x);
-
-     x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),3)).toString();
-     ui->lineEdit_adresseEdit->setText(x);
-
-     x = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),4)).toString();
-     ui->lineEdit_budgetEdit->setText(x);
-
-    ui->tabWidget_2->setCurrentIndex(3);
-
-    qDebug() << x;
-
-}
-
-void Marketing::on_tableView_2_doubleClicked(const QModelIndex &index) //EDIT PUB
-{
-    QString x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),0)).toString();
-    ui->lineEdit_idpub_Edit->setText(x);
-
-     x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),1)).toString();
-     ui->lineEdit_IDsp2_Edit->setText(x);
-
-     x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),1)).toString();
-     ui->lineEdit_num2Edit->setText(x);
-
-     x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),3)).toString();
-     ui->lineEdit_typeEdit->setText(x);
-
-     x = ui->tableView_2->model()->data(ui->tableView_2->model()->index(index.row(),4)).toString();
-     ui->lineEdit_descriptionEdit->setText(x);
-
-    ui->tabWidget_3->setCurrentIndex(3);
-
-    qDebug() << x;
 }
 
 void Marketing::on_pushButton_editPub_clicked()
@@ -271,7 +226,7 @@ void Marketing::on_pushButton_editPub_clicked()
                               QObject::tr("Publicitée Modifiée.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
             ui->tabWidget_3->setCurrentIndex(1);
-            ui->tableView_2->setModel(tmppuclicite.afficher_publicite());
+            ui->tableView_pub->setModel(tmppuclicite.afficher_publicite());
             }
     else
             {
@@ -289,17 +244,62 @@ void Marketing::on_pushButton_editPub_clicked()
 void Marketing::on_recherche_textChanged(const QString &arg1)
 {
   //  QString input = ui->recherche->text();
-        ui->tableView_2->setModel(tmppuclicite.Search_pub(arg1));
+        ui->tableView_pub->setModel(tmppuclicite.Search_pub(arg1));
 }
 
 void Marketing::on_recherche_sponsor_textChanged(const QString &arg1)
 {
   //  QString input2 = ui->rechercher_SP->text();
 
-        ui->tableView->setModel(tmpsponsor.Search_sponsor(arg1));
+        ui->tableView_sponsor->setModel(tmpsponsor.Search_sponsor(arg1));
 }
 
 void Marketing::on_comboBox_tri_pub_currentTextChanged(const QString &arg1)
 {
-    ui->tableView_2->setModel(tmppuclicite.tri_pub(arg1));
+    ui->tableView_pub->setModel(tmppuclicite.tri_pub(arg1));
+}
+
+void Marketing::on_tableView_sponsor_doubleClicked(const QModelIndex &index) //EDIT SPONSOR
+{
+    QString x = ui->tableView_sponsor->model()->data(ui->tableView_sponsor->model()->index(index.row(),0)).toString();
+    ui->lineEdit_idspEdit->setText(x);
+
+     x = ui->tableView_sponsor->model()->data(ui->tableView_sponsor->model()->index(index.row(),1)).toString();
+     ui->lineEdit_numEdit->setText(x);
+
+     x = ui->tableView_sponsor->model()->data(ui->tableView_sponsor->model()->index(index.row(),2)).toString();
+     ui->lineEdit_nomEdit->setText(x);
+
+     x = ui->tableView_sponsor->model()->data(ui->tableView_sponsor->model()->index(index.row(),3)).toString();
+     ui->lineEdit_adresseEdit->setText(x);
+
+     x = ui->tableView_sponsor->model()->data(ui->tableView_sponsor->model()->index(index.row(),4)).toString();
+     ui->lineEdit_budgetEdit->setText(x);
+
+    ui->tabWidget_2->setCurrentIndex(3);
+
+    qDebug() << x;
+
+}
+
+void Marketing::on_tableView_pub_doubleClicked(const QModelIndex &index) //EDIT PUB
+{
+    QString x = ui->tableView_pub->model()->data(ui->tableView_pub->model()->index(index.row(),0)).toString();
+    ui->lineEdit_idpub_Edit->setText(x);
+
+     x = ui->tableView_pub->model()->data(ui->tableView_pub->model()->index(index.row(),1)).toString();
+     ui->lineEdit_IDsp2_Edit->setText(x);
+
+     x = ui->tableView_pub->model()->data(ui->tableView_pub->model()->index(index.row(),1)).toString();
+     ui->lineEdit_num2Edit->setText(x);
+
+     x = ui->tableView_pub->model()->data(ui->tableView_pub->model()->index(index.row(),3)).toString();
+     ui->lineEdit_typeEdit->setText(x);
+
+     x = ui->tableView_pub->model()->data(ui->tableView_pub->model()->index(index.row(),4)).toString();
+     ui->lineEdit_descriptionEdit->setText(x);
+
+    ui->tabWidget_3->setCurrentIndex(3);
+
+    qDebug() << x;
 }

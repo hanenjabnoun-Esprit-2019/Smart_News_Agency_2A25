@@ -16,7 +16,7 @@ CFLAGS        = -fno-keep-inline-dllexport -pipe -g -Wextra -Wall -W $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -pipe -g -std=gnu++11 -Wextra -Wall -W -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I. -IC:/Qt/5.9.1/mingw53_32/include -IC:/Qt/5.9.1/mingw53_32/include/QtWidgets -IC:/Qt/5.9.1/mingw53_32/include/QtGui -IC:/Qt/5.9.1/mingw53_32/include/QtANGLE -IC:/Qt/5.9.1/mingw53_32/include/QtSql -IC:/Qt/5.9.1/mingw53_32/include/QtNetwork -IC:/Qt/5.9.1/mingw53_32/include/QtCore -Idebug -I. -IC:/Qt/5.9.1/mingw53_32/mkspecs/win32-g++ 
 LINKER      =        g++
-LFLAGS        =        -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,debug/
+LFLAGS        =        -Wl,-subsystem,windows -mthreads
 LIBS        =        -lmingw32 -LC:/Qt/5.9.1/mingw53_32/lib C:/Qt/5.9.1/mingw53_32/lib/libqtmaind.a -LC:/utils/my_sql/my_sql/lib -LC:/utils/postgresql/pgsql/lib -lshell32 C:/Qt/5.9.1/mingw53_32/lib/libQt5Cored.a C:/Qt/5.9.1/mingw53_32/lib/libQt5Widgetsd.a C:/Qt/5.9.1/mingw53_32/lib/libQt5Guid.a C:/Qt/5.9.1/mingw53_32/lib/libQt5Sqld.a C:/Qt/5.9.1/mingw53_32/lib/libQt5Networkd.a C:/Qt/5.9.1/mingw53_32/lib/libQt5Cored.a 
 QMAKE         = C:/Qt/5.9.1/mingw53_32/bin/qmake.exe
 IDC           = idc
@@ -162,7 +162,6 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug/main.o debug/mainwindow.o debug/connection.o debug/sponsor.o debug/marketing.o debug/publicite.o debug/emailaddress.o debug/mimeattachment.o debug/mimecontentformatter.o debug/mimefile.o debug/mimehtml.o debug/mimeinlinefile.o debug/mimemessage.o debug/mimemultipart.o debug/mimepart.o debug/mimetext.o debug/quotedprintable.o debug/smtpclient.o debug/moc_mainwindow.o debug/moc_marketing.o debug/moc_emailaddress.o debug/moc_mimeattachment.o debug/moc_mimecontentformatter.o debug/moc_mimefile.o debug/moc_mimehtml.o debug/moc_mimemultipart.o debug/moc_mimepart.o debug/moc_quotedprintable.o debug/moc_smtpclient.o
-	-$(DEL_FILE) debug
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -408,6 +407,35 @@ debug/moc_marketing.cpp: sponsor.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		src/SmtpMime \
+		src/smtpclient.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/QSslSocket \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFlags \
+		src/mimemessage.h \
+		src/mimepart.h \
+		src/mimecontentformatter.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QByteArray \
+		src/smtpexports.h \
+		src/mimemultipart.h \
+		src/emailaddress.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtGui/QList \
+		src/mimehtml.h \
+		src/mimetext.h \
+		src/mimeattachment.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFile \
+		src/mimefile.h \
+		src/mimeinlinefile.h \
 		publicite.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/qlabel.h \
@@ -1277,6 +1305,35 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/QDialog \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/qdialog.h \
+		src/SmtpMime \
+		src/smtpclient.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/QSslSocket \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFlags \
+		src/mimemessage.h \
+		src/mimepart.h \
+		src/mimecontentformatter.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QByteArray \
+		src/smtpexports.h \
+		src/mimemultipart.h \
+		src/emailaddress.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtGui/QList \
+		src/mimehtml.h \
+		src/mimetext.h \
+		src/mimeattachment.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFile \
+		src/mimefile.h \
+		src/mimeinlinefile.h \
 		publicite.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/mainwindow.o mainwindow.cpp
 
@@ -1424,6 +1481,35 @@ debug/sponsor.o: sponsor.cpp sponsor.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		src/SmtpMime \
+		src/smtpclient.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/QSslSocket \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFlags \
+		src/mimemessage.h \
+		src/mimepart.h \
+		src/mimecontentformatter.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QByteArray \
+		src/smtpexports.h \
+		src/mimemultipart.h \
+		src/emailaddress.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtGui/QList \
+		src/mimehtml.h \
+		src/mimetext.h \
+		src/mimeattachment.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFile \
+		src/mimefile.h \
+		src/mimeinlinefile.h \
 		connection.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtSql/QSqlDatabase \
 		marketing.h \
@@ -1550,6 +1636,35 @@ debug/marketing.o: marketing.cpp marketing.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		src/SmtpMime \
+		src/smtpclient.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/QSslSocket \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFlags \
+		src/mimemessage.h \
+		src/mimepart.h \
+		src/mimecontentformatter.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QByteArray \
+		src/smtpexports.h \
+		src/mimemultipart.h \
+		src/emailaddress.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtGui/QList \
+		src/mimehtml.h \
+		src/mimetext.h \
+		src/mimeattachment.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFile \
+		src/mimefile.h \
+		src/mimeinlinefile.h \
 		publicite.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/5.9.1/mingw53_32/include/QtWidgets/qlabel.h \
@@ -1724,6 +1839,35 @@ debug/publicite.o: publicite.cpp sponsor.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		src/SmtpMime \
+		src/smtpclient.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/QSslSocket \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFlags \
+		src/mimemessage.h \
+		src/mimepart.h \
+		src/mimecontentformatter.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QByteArray \
+		src/smtpexports.h \
+		src/mimemultipart.h \
+		src/emailaddress.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtGui/QList \
+		src/mimehtml.h \
+		src/mimetext.h \
+		src/mimeattachment.h \
+		C:/Qt/5.9.1/mingw53_32/include/QtCore/QFile \
+		src/mimefile.h \
+		src/mimeinlinefile.h \
 		publicite.h \
 		connection.h \
 		C:/Qt/5.9.1/mingw53_32/include/QtSql/QSqlDatabase \

@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Marketing_t {
     QByteArrayData data[20];
-    char stringdata0[507];
+    char stringdata0[517];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,14 +43,14 @@ QT_MOC_LITERAL(8, 180, 30), // "on_pushButton_ajoutPub_clicked"
 QT_MOC_LITERAL(9, 211, 33), // "on_pushButton_afficherPub_cli..."
 QT_MOC_LITERAL(10, 245, 34), // "on_pushButton_supprimerPub_cl..."
 QT_MOC_LITERAL(11, 280, 32), // "on_pushButton_modifierSP_clicked"
-QT_MOC_LITERAL(12, 313, 26), // "on_tableView_doubleClicked"
-QT_MOC_LITERAL(13, 340, 5), // "index"
-QT_MOC_LITERAL(14, 346, 28), // "on_tableView_2_doubleClicked"
-QT_MOC_LITERAL(15, 375, 29), // "on_pushButton_editPub_clicked"
-QT_MOC_LITERAL(16, 405, 24), // "on_recherche_textChanged"
-QT_MOC_LITERAL(17, 430, 4), // "arg1"
-QT_MOC_LITERAL(18, 435, 32), // "on_recherche_sponsor_textChanged"
-QT_MOC_LITERAL(19, 468, 38) // "on_comboBox_tri_pub_currentTe..."
+QT_MOC_LITERAL(12, 313, 29), // "on_pushButton_editPub_clicked"
+QT_MOC_LITERAL(13, 343, 24), // "on_recherche_textChanged"
+QT_MOC_LITERAL(14, 368, 4), // "arg1"
+QT_MOC_LITERAL(15, 373, 32), // "on_recherche_sponsor_textChanged"
+QT_MOC_LITERAL(16, 406, 38), // "on_comboBox_tri_pub_currentTe..."
+QT_MOC_LITERAL(17, 445, 34), // "on_tableView_sponsor_doubleCl..."
+QT_MOC_LITERAL(18, 480, 5), // "index"
+QT_MOC_LITERAL(19, 486, 30) // "on_tableView_pub_doubleClicked"
 
     },
     "Marketing\0on_pushButton_clicked\0\0"
@@ -63,12 +63,12 @@ QT_MOC_LITERAL(19, 468, 38) // "on_comboBox_tri_pub_currentTe..."
     "on_pushButton_afficherPub_clicked\0"
     "on_pushButton_supprimerPub_clicked\0"
     "on_pushButton_modifierSP_clicked\0"
-    "on_tableView_doubleClicked\0index\0"
-    "on_tableView_2_doubleClicked\0"
     "on_pushButton_editPub_clicked\0"
     "on_recherche_textChanged\0arg1\0"
     "on_recherche_sponsor_textChanged\0"
-    "on_comboBox_tri_pub_currentTextChanged"
+    "on_comboBox_tri_pub_currentTextChanged\0"
+    "on_tableView_sponsor_doubleClicked\0"
+    "index\0on_tableView_pub_doubleClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -96,11 +96,11 @@ static const uint qt_meta_data_Marketing[] = {
        9,    0,  101,    2, 0x08 /* Private */,
       10,    0,  102,    2, 0x08 /* Private */,
       11,    0,  103,    2, 0x08 /* Private */,
-      12,    1,  104,    2, 0x08 /* Private */,
-      14,    1,  107,    2, 0x08 /* Private */,
-      15,    0,  110,    2, 0x08 /* Private */,
+      12,    0,  104,    2, 0x08 /* Private */,
+      13,    1,  105,    2, 0x08 /* Private */,
+      15,    1,  108,    2, 0x08 /* Private */,
       16,    1,  111,    2, 0x08 /* Private */,
-      18,    1,  114,    2, 0x08 /* Private */,
+      17,    1,  114,    2, 0x08 /* Private */,
       19,    1,  117,    2, 0x08 /* Private */,
 
  // slots: parameters
@@ -114,12 +114,12 @@ static const uint qt_meta_data_Marketing[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,   13,
-    QMetaType::Void, QMetaType::QModelIndex,   13,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   17,
-    QMetaType::Void, QMetaType::QString,   17,
-    QMetaType::Void, QMetaType::QString,   17,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QModelIndex,   18,
+    QMetaType::Void, QMetaType::QModelIndex,   18,
 
        0        // eod
 };
@@ -140,12 +140,12 @@ void Marketing::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 7: _t->on_pushButton_afficherPub_clicked(); break;
         case 8: _t->on_pushButton_supprimerPub_clicked(); break;
         case 9: _t->on_pushButton_modifierSP_clicked(); break;
-        case 10: _t->on_tableView_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 11: _t->on_tableView_2_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 12: _t->on_pushButton_editPub_clicked(); break;
-        case 13: _t->on_recherche_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 14: _t->on_recherche_sponsor_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 15: _t->on_comboBox_tri_pub_currentTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 10: _t->on_pushButton_editPub_clicked(); break;
+        case 11: _t->on_recherche_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 12: _t->on_recherche_sponsor_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 13: _t->on_comboBox_tri_pub_currentTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 14: _t->on_tableView_sponsor_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 15: _t->on_tableView_pub_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }

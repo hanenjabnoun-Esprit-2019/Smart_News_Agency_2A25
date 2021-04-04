@@ -54,7 +54,7 @@ public:
     QLabel *label_30;
     QWidget *Consulter_2;
     QPushButton *pushButton_afficherPub;
-    QTableView *tableView_2;
+    QTableView *tableView_pub;
     QLabel *label_29;
     QLineEdit *recherche;
     QComboBox *comboBox_tri_pub;
@@ -103,7 +103,7 @@ public:
     QLabel *label_27;
     QWidget *Consulter;
     QPushButton *pushButton_affichersp;
-    QTableView *tableView;
+    QTableView *tableView_sponsor;
     QLabel *label_28;
     QLabel *label_37;
     QLineEdit *recherche_sponsor;
@@ -237,9 +237,9 @@ public:
         pushButton_afficherPub->setGeometry(QRect(550, 230, 221, 31));
         pushButton_afficherPub->setStyleSheet(QLatin1String("font: 15pt \"MV Boli\";\n"
 ""));
-        tableView_2 = new QTableView(Consulter_2);
-        tableView_2->setObjectName(QStringLiteral("tableView_2"));
-        tableView_2->setGeometry(QRect(20, 60, 491, 191));
+        tableView_pub = new QTableView(Consulter_2);
+        tableView_pub->setObjectName(QStringLiteral("tableView_pub"));
+        tableView_pub->setGeometry(QRect(20, 60, 491, 191));
         label_29 = new QLabel(Consulter_2);
         label_29->setObjectName(QStringLiteral("label_29"));
         label_29->setGeometry(QRect(640, 60, 71, 81));
@@ -434,9 +434,9 @@ public:
         pushButton_affichersp->setGeometry(QRect(520, 220, 221, 31));
         pushButton_affichersp->setStyleSheet(QLatin1String("font: 15pt \"MV Boli\";\n"
 ""));
-        tableView = new QTableView(Consulter);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(20, 50, 491, 201));
+        tableView_sponsor = new QTableView(Consulter);
+        tableView_sponsor->setObjectName(QStringLiteral("tableView_sponsor"));
+        tableView_sponsor->setGeometry(QRect(20, 50, 491, 201));
         label_28 = new QLabel(Consulter);
         label_28->setObjectName(QStringLiteral("label_28"));
         label_28->setGeometry(QRect(630, 60, 71, 81));
@@ -556,9 +556,9 @@ public:
 
         retranslateUi(Marketing);
 
-        stackedWidget_2->setCurrentIndex(1);
-        tabWidget_3->setCurrentIndex(0);
-        tabWidget_2->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(0);
+        tabWidget_3->setCurrentIndex(1);
+        tabWidget_2->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Marketing);

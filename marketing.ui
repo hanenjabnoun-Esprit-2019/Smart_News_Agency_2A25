@@ -29,7 +29,7 @@
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="Publicite">
     <widget class="QPushButton" name="pushButton_SP_2">
@@ -79,7 +79,7 @@
       <string notr="true">font: 10pt &quot;MV Boli&quot;;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Ajout_2">
       <attribute name="title">
@@ -334,7 +334,7 @@ color: rgb(0, 0, 0);</string>
         <string>Afficher Publicité</string>
        </property>
       </widget>
-      <widget class="QTableView" name="tableView_2">
+      <widget class="QTableView" name="tableView_pub">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -785,7 +785,7 @@ font: 75 12pt &quot;Adobe Gothic Std B&quot;;</string>
       <string notr="true">font: 10pt &quot;MV Boli&quot;;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Ajout">
       <attribute name="title">
@@ -998,7 +998,7 @@ color: rgb(212, 175, 55);</string>
         <string>Afficher Sponsor</string>
        </property>
       </widget>
-      <widget class="QTableView" name="tableView">
+      <widget class="QTableView" name="tableView_sponsor">
        <property name="geometry">
         <rect>
          <x>20</x>
