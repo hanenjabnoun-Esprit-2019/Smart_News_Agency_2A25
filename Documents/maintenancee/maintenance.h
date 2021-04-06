@@ -2,6 +2,9 @@
 #define MAINTENANCE_H
 #include "equipement.h"
 #include <QDialog>
+#include <QtPrintSupport/QPrintDialog>
+#include <QPrinter>
+#include <QPrintPreviewDialog>
 
 namespace Ui {
 class maintenance;
@@ -38,6 +41,10 @@ private slots:
 
 
     void on_pushButton_filtrer_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_rechercheav_cursorPositionChanged(int arg1, int arg2);
 
 private:
     Ui::maintenance *ui;

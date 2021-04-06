@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "connection.h"
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +26,12 @@ int main(int argc, char *argv[])
 
 
 
-    return a.exec();
+
+
+    QFile styleSheetFile("C:/Users/21626/Desktop/maintenancee/SpyBot.qss");
+            styleSheetFile.open(QFile::ReadOnly);
+        QString styleSheet= QLatin1String(styleSheetFile.readAll());
+        a.setStyleSheet(styleSheet);
+        return a.exec();
 }
 

@@ -11,15 +11,15 @@ Maintenance1::Maintenance1()
     idemp=0;
     idequip=0;
     typep="";
-    datem="";
+    datem=QDate (2000,01,01);
 }
-Maintenance1::Maintenance1(int idm,int idemp,int idequip,QString typep,QString datem)
+Maintenance1::Maintenance1(int idm,int idemp,int idequip,QString typep,QDate datem)
 {this->idm=idm;this->idemp=idemp;this->idequip=idequip;this->typep=typep;this->datem=datem;}
 void Maintenance1::setidm(int idm){this->idm=idm;}
 void Maintenance1::setidemp(int idemp){this->idemp=idemp;}
 void Maintenance1::setidequip(int idequip){this->idequip=idequip;}
 void Maintenance1::settypep(QString typep){this->typep=typep;}
-void Maintenance1::setdatem(QString datem){this->datem=datem;}
+void Maintenance1::setdatem(QDate datem){this->datem=datem;}
 
 
 
@@ -27,7 +27,7 @@ int Maintenance1:: get_idm(){return idm;}
 int Maintenance1:: get_idemp(){return idemp;}
 int Maintenance1:: get_idequip(){return idequip;}
 QString Maintenance1:: get_typep(){return typep;}
-QString Maintenance1:: get_datem(){return datem;}
+QDate Maintenance1:: get_datem(){return datem;}
 
 bool Maintenance1::ajouter_maintenance()
 {
@@ -98,4 +98,20 @@ bool Maintenance1::modifier_maintenance()
 
     return    query.exec();
 
+}
+QSqlQueryModel * Maintenance1::afficherecherche(QString res)
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    QSqlQuery query;
+    query.prepare("select * from MAINTENANCE  where (IDM LIKE '%"+res+"%' OR IDEMP LIKE '%"+res+"%' OR IDEQUIP LIKE '%"+res+"%' )");
+    query.exec();
+    model->setQuery(query);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id maintenance"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("id employé"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("id equipement"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type panne"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date maintenace"));
+
+
+    return model;
 }
