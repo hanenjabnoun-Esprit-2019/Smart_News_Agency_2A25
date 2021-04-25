@@ -27,6 +27,7 @@ DEFINES += SMTP_BUILD
 CONFIG += c++11
 
 SOURCES += \
+    ensei.cpp \
         main.cpp \
         mainwindow.cpp \
     finance.cpp \
@@ -47,6 +48,7 @@ SOURCES += \
     depenses.cpp
 
 HEADERS += \
+    ensei.h \
         mainwindow.h \
     finance.h \
     connection.h \
