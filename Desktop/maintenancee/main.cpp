@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QDebug>
+#include<QFile>
 #include "connection.h"
 
 int main(int argc, char *argv[])
@@ -23,7 +24,10 @@ int main(int argc, char *argv[])
                     QObject::tr("connection failed.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
-
+    QFile styleSheetFile("C:/Users/21626/Desktop/maintenancee/SpyBot.qss");
+            styleSheetFile.open(QFile::ReadOnly);
+        QString styleSheet= QLatin1String(styleSheetFile.readAll());
+        a.setStyleSheet(styleSheet);
 
     return a.exec();
 }

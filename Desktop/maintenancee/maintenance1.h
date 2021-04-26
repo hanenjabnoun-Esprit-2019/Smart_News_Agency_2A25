@@ -3,31 +3,35 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QDate>
 
 class Maintenance1
 {
-    QString  typep,datem;
+    QString  typep;
     int idm,idemp,idequip;
+    QDate datem;
 public:
     Maintenance1();
-    Maintenance1(int,int,int,QString,QString);
+    Maintenance1(int,int,int,QString,QDate);
 
 
     int get_idm();
     int get_idemp();
     int get_idequip();
     QString get_typep();
-    QString get_datem();
+    QDate get_datem();
     void setidm(int);
     void setidemp(int);
     void setidequip(int);
     void settypep(QString );
-    void setdatem(QString );
+    void setdatem(QDate );
 
     bool ajouter_maintenance();
     QSqlQueryModel* afficher_maintenance();
     bool supprimer_maintenance(int);
     bool modifier_maintenance();
+
+    QSqlQueryModel * afficherecherche(QString )
 ;
 
 private:

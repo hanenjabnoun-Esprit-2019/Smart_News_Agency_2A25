@@ -10,6 +10,10 @@
 #include <QTableView>
 #include <QDialog>
 #include <QDebug>
+#include <QtPrintSupport/QPrintDialog>
+#include <QPrinter>
+#include <QPrintPreviewDialog>
+#include <QTextDocument>
 
 
 maintenance::maintenance(QWidget *parent) :
@@ -119,7 +123,7 @@ void maintenance::on_pb_ajouterm_clicked()
         int idemp=ui->lineEdit_idemp->text().toInt();
         int idequip=ui->lineEdit_idequip->text().toInt();
         QString typep =ui->lineEdit_typep->text();
-        QString datem =ui->lineEdit_datem->text();
+        QDate datem =ui->dateEdit->date();
 
         Maintenance1 M (idm,idemp,idequip,typep,datem);
         bool test=M.ajouter_maintenance();
@@ -165,7 +169,7 @@ void maintenance::on_pb_updatem_clicked()
         int idemp = ui->lineEdit_idempm->text().toInt();
         int idequip = ui->lineEdit_idequipm->text().toInt();
         QString typep= ui->lineEdit_typepm->text();
-        QString datem= ui->lineEdit_datem->text();
+        QDate datem= ui->dateEdit_2->date();
         Maintenance1 M (idm,idemp,idequip,typep,datem);
 
       bool test=M.modifier_maintenance();
@@ -191,5 +195,81 @@ void maintenance::on_pb_updatem_clicked()
 
 void maintenance::on_pb_trier_clicked()
 {
+    Equipement E;
 
+            ui->tab_equipement->setModel(E.trier());
+}
+
+void maintenance::on_pushButton_7_clicked()
+{
+    QString strStream;
+                   QTextStream out(&strStream);
+                   const int rowCount = ui->tab_maintenance->model()->rowCount();
+                   const int columnCount =ui->tab_maintenance->model()->columnCount();
+
+                   out <<  "<html>\n"
+                           "<head>\n"
+                           "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                           <<  QString("<title>%1</title>\n").arg("eleve")
+                           <<  "</head>\n"
+                           "<body bgcolor=#F4B8B8 link=#5000A0>\n"
+                              // "<img src='C:/Users/ksemt/Desktop/final/icon/logo.webp' width='20' height='20'>\n"
+                               "<img src='C:/Users/DeLL/Desktop/logooo.png' width='100' height='100'>\n"
+                               "<h1>   Liste des Maintenances </h1>"
+                                "<h1>  </h1>"
+
+                               "<table border=1 cellspacing=0 cellpadding=2>\n";
+
+
+                   // headers
+                       out << "<thead><tr bgcolor=#f0f0f0>";
+                       for (int column = 0; column < columnCount; column++)
+                           if (!ui->tab_maintenance->isColumnHidden(column))
+                               out << QString("<th>%1</th>").arg(ui->tab_maintenance->model()->headerData(column, Qt::Horizontal).toString());
+                       out << "</tr></thead>\n";
+                       // data table
+                          for (int row = 0; row < rowCount; row++) {
+                              out << "<tr>";
+                              for (int column = 0; column < columnCount; column++) {
+                                  if (!ui->tab_maintenance->isColumnHidden(column)) {
+                                      QString data = ui->tab_maintenance->model()->data(ui->tab_maintenance->model()->index(row, column)).toString().simplified();
+                                      out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                                  }
+                              }
+                              out << "</tr>\n";
+                          }
+                          out <<  "</table>\n"
+                              "</body>\n"
+                              "</html>\n";
+
+                          QTextDocument *document = new QTextDocument();
+                          document ->setHtml(strStream);
+
+                          QPrinter printer;
+
+                          QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
+                          if (dialog->exec() == QDialog::Accepted) {
+                              document ->print(&printer);
+                       }
+}
+
+
+void maintenance::on_rechercheav_cursorPositionChanged(int arg1, int arg2)
+{
+    Maintenance1 M;
+    ui->tab_maintenance->setModel(M.afficherecherche(ui->rechercheav->text()));
+
+        QString test =ui->rechercheav->text();
+
+        if(test=="")
+        {
+            ui->tab_maintenance->setModel(M.afficher_maintenance());//refresh
+        }
+}
+
+void maintenance::on_filtrer_clicked()
+{
+    Equipement E;
+
+            ui->tab_equipement->setModel(E.filtrer());
 }

@@ -29,6 +29,8 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     bool modifier_equipement();
+    QSqlQueryModel* trier();
+    QSqlQueryModel* filtrer();
 ;
 
 private:

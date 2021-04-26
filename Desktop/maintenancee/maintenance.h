@@ -35,6 +35,12 @@ private slots:
 
     void on_pb_trier_clicked();
 
+    void on_pushButton_7_clicked();
+
+    void on_rechercheav_cursorPositionChanged(int arg1, int arg2);
+
+    void on_filtrer_clicked();
+
 private:
     Ui::maintenance *ui;
 };

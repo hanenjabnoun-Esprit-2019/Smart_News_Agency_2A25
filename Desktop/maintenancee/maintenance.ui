@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="equipement">
     <widget class="QTabWidget" name="tabWidget_2">
@@ -34,6 +34,11 @@
        <width>661</width>
        <height>351</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -47,7 +52,7 @@
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>521</width>
+         <width>631</width>
          <height>291</height>
         </rect>
        </property>
@@ -137,7 +142,7 @@
          <rect>
           <x>140</x>
           <y>20</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -147,7 +152,7 @@
          <rect>
           <x>140</x>
           <y>60</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -157,7 +162,7 @@
          <rect>
           <x>140</x>
           <y>100</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -167,7 +172,7 @@
          <rect>
           <x>140</x>
           <y>140</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -177,7 +182,7 @@
          <rect>
           <x>140</x>
           <y>190</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -187,7 +192,7 @@
          <rect>
           <x>140</x>
           <y>240</y>
-          <width>113</width>
+          <width>271</width>
           <height>22</height>
          </rect>
         </property>
@@ -195,8 +200,8 @@
        <widget class="QPushButton" name="pb_ajouter">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>130</y>
+          <x>490</x>
+          <y>140</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -234,7 +239,7 @@
         <string>Trier</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_8">
+      <widget class="QPushButton" name="filtrer">
        <property name="geometry">
         <rect>
          <x>530</x>
@@ -335,7 +340,7 @@
         <rect>
          <x>190</x>
          <y>30</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -345,7 +350,7 @@
         <rect>
          <x>190</x>
          <y>80</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -355,7 +360,7 @@
         <rect>
          <x>190</x>
          <y>130</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -365,7 +370,7 @@
         <rect>
          <x>190</x>
          <y>180</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -375,7 +380,7 @@
         <rect>
          <x>190</x>
          <y>230</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -385,7 +390,7 @@
         <rect>
          <x>190</x>
          <y>280</y>
-         <width>113</width>
+         <width>271</width>
          <height>22</height>
         </rect>
        </property>
@@ -393,8 +398,8 @@
       <widget class="QPushButton" name="pushButton_updateequip">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>120</y>
+         <x>530</x>
+         <y>140</y>
          <width>93</width>
          <height>28</height>
         </rect>
@@ -468,6 +473,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
+     </property>
      <property name="text">
       <string>Maintenace</string>
      </property>
@@ -481,6 +491,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
+     </property>
      <property name="text">
       <string>Equipement</string>
      </property>
@@ -490,11 +505,16 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>10</y>
+       <x>10</x>
+       <y>20</y>
        <width>671</width>
        <height>341</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -547,7 +567,7 @@
         <rect>
          <x>210</x>
          <y>40</y>
-         <width>113</width>
+         <width>211</width>
          <height>22</height>
         </rect>
        </property>
@@ -557,17 +577,7 @@
         <rect>
          <x>210</x>
          <y>180</y>
-         <width>113</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_date">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>230</y>
-         <width>113</width>
+         <width>211</width>
          <height>22</height>
         </rect>
        </property>
@@ -575,7 +585,7 @@
       <widget class="QPushButton" name="pb_ajouterm">
        <property name="geometry">
         <rect>
-         <x>410</x>
+         <x>500</x>
          <y>140</y>
          <width>93</width>
          <height>28</height>
@@ -616,7 +626,7 @@
         <rect>
          <x>210</x>
          <y>80</y>
-         <width>113</width>
+         <width>211</width>
          <height>22</height>
         </rect>
        </property>
@@ -626,7 +636,17 @@
         <rect>
          <x>210</x>
          <y>130</y>
-         <width>113</width>
+         <width>211</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>230</y>
+         <width>211</width>
          <height>22</height>
         </rect>
        </property>
@@ -646,30 +666,50 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="geometry">
-        <rect>
-         <x>380</x>
-         <y>270</y>
-         <width>93</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Statistiques</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="pushButton_7">
        <property name="geometry">
         <rect>
          <x>500</x>
          <y>270</y>
-         <width>93</width>
+         <width>111</width>
          <height>28</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>MV Boli</family>
+        </font>
+       </property>
        <property name="text">
         <string>Exporter PDF</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="rechercheav">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>270</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>270</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MV Boli</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Rechercher</string>
        </property>
       </widget>
      </widget>
@@ -747,7 +787,7 @@
         <rect>
          <x>200</x>
          <y>40</y>
-         <width>113</width>
+         <width>221</width>
          <height>22</height>
         </rect>
        </property>
@@ -757,7 +797,7 @@
         <rect>
          <x>200</x>
          <y>90</y>
-         <width>113</width>
+         <width>221</width>
          <height>22</height>
         </rect>
        </property>
@@ -767,7 +807,7 @@
         <rect>
          <x>200</x>
          <y>140</y>
-         <width>113</width>
+         <width>221</width>
          <height>22</height>
         </rect>
        </property>
@@ -776,18 +816,8 @@
        <property name="geometry">
         <rect>
          <x>200</x>
-         <y>190</y>
-         <width>113</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_datem">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>250</y>
-         <width>113</width>
+         <y>200</y>
+         <width>221</width>
          <height>22</height>
         </rect>
        </property>
@@ -795,14 +825,24 @@
       <widget class="QPushButton" name="pb_updatem">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>130</y>
+         <x>480</x>
+         <y>140</y>
          <width>93</width>
          <height>28</height>
         </rect>
        </property>
        <property name="text">
         <string>Update</string>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>260</y>
+         <width>211</width>
+         <height>22</height>
+        </rect>
        </property>
       </widget>
      </widget>
@@ -813,9 +853,9 @@
       <widget class="QLineEdit" name="lineEdit_idm_3">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>110</y>
-         <width>161</width>
+         <x>200</x>
+         <y>120</y>
+         <width>201</width>
          <height>22</height>
         </rect>
        </property>
@@ -823,8 +863,8 @@
       <widget class="QLabel" name="label_21">
        <property name="geometry">
         <rect>
-         <x>200</x>
-         <y>60</y>
+         <x>220</x>
+         <y>70</y>
          <width>171</width>
          <height>20</height>
         </rect>
@@ -837,7 +877,7 @@
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>180</y>
+         <y>170</y>
          <width>93</width>
          <height>28</height>
         </rect>
@@ -870,6 +910,11 @@
        <height>28</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
+     </property>
      <property name="text">
       <string>Equipement</string>
      </property>
@@ -882,6 +927,11 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+      </font>
      </property>
      <property name="text">
       <string>Mainenance</string>
