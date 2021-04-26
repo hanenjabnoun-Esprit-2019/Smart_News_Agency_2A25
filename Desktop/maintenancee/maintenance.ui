@@ -585,7 +585,7 @@
       <widget class="QPushButton" name="pb_ajouterm">
        <property name="geometry">
         <rect>
-         <x>500</x>
+         <x>490</x>
          <y>140</y>
          <width>93</width>
          <height>28</height>
