@@ -78,7 +78,7 @@
       <string>Ressources Humaines</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="pushButton_maintenance">
      <property name="geometry">
       <rect>
        <x>60</x>
