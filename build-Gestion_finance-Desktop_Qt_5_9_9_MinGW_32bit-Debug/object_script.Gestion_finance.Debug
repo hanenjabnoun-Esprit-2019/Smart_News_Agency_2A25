@@ -1,5 +1,7 @@
 INPUT(
+./debug\equipement.o
 ./debug\main.o
+./debug\maintenance.o
 ./debug\mainwindow.o
 ./debug\finance.o
 ./debug\connection.o

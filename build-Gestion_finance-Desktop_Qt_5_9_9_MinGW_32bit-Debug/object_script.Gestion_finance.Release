@@ -1,5 +1,7 @@
 INPUT(
+./release\equipement.o
 ./release\main.o
+./release\maintenance.o
 ./release\mainwindow.o
 ./release\finance.o
 ./release\connection.o

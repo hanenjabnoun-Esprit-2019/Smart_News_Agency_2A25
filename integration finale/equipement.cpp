@@ -1,6 +1,4 @@
-#ifndef EQUIPEMENT_H
-#define EQUIPEMENT_H
-
+#include "equipement.h"
 #include<QSqlQuery>
 #include<QDebug>
 #include <QSqlQueryModel>
@@ -101,3 +99,34 @@ bool Equipement::modifier_equipement()
     return    query.exec();
 
 }
+
+
+QSqlQueryModel* Equipement:: trier()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from EQUIPEMENT order by (PRIX)DESC ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Type"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nombre"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prix"));
+      model->setHeaderData(4, Qt::Horizontal, QObject::tr("Etat"));
+            model->setHeaderData(5, Qt::Horizontal, QObject::tr("Marque"));
+    return model;
+}
+
+QSqlQueryModel* Equipement:: filtrer()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from EQUIPEMENT order by TYPE ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Type"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nombre"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prix"));
+      model->setHeaderData(4, Qt::Horizontal, QObject::tr("Etat"));
+            model->setHeaderData(5, Qt::Horizontal, QObject::tr("Marque"));
+    return model;
+}
+
+
