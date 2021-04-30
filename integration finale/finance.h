@@ -43,6 +43,14 @@ private slots:
 
     void on_comboBox_tri_dp_currentTextChanged(const QString &arg1);
 
+    void on_pdf_clicked();
+
+    void on_actionSound_clicked();
+
+    void on_muteSound_clicked();
+
+    void on_pdf_3_clicked();
+
 private:
     Ui::Finance *ui;
     Revenues __R;

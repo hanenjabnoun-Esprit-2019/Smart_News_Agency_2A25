@@ -2,12 +2,17 @@
 #include "ui_finance.h"
 #include <QMessageBox>
 #include <QFile>
+#include <QPrinter>
+#include <QTextDocument>
+#include <QPrintDialog>
+#include <QTextStream>
 
 Finance::Finance(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Finance)
 {
     ui->setupUi(this);
+
 
 
     refrech();
@@ -177,3 +182,78 @@ void Finance::on_comboBox_tri_dp_currentTextChanged(const QString &arg1)
     ui->tableView_depense->setModel(__D.sort(arg1));
 
 }
+
+void Finance::on_pdf_clicked()
+{
+    QTableView tableView_Revenue;
+        QSqlQueryModel * Modal=new  QSqlQueryModel();
+
+        QSqlQuery qry;
+         qry.prepare("SELECT * FROM revenue");
+         qry.exec();
+         Modal->setQuery(qry);
+      tableView_Revenue .setModel(Modal);
+
+
+
+
+
+
+         QString strStream;
+         QTextStream out(&strStream);
+
+         const int rowCount =tableView_Revenue.model()->rowCount();
+         const int columnCount = tableView_Revenue.model()->columnCount();
+
+         const QString strTitle ="Document";
+
+
+         out <<  "<html>\n"
+             "<head>\n"
+                 "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+             <<  QString("<title>%1</title>\n").arg(strTitle)
+             <<  "</head>\n"
+             "<body bgcolor=#ffffff link=#5000A0>\n"
+            << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les employes")
+            <<"<br>"
+             <<"<table border=1 cellspacing=0 cellpadding=2>\n";
+
+         out << "<thead><tr bgcolor=#f0f0f0>";
+         for (int column = 0; column < columnCount; column++)
+             if (!tableView_Revenue.isColumnHidden(column))
+                 out << QString("<th>%1</th>").arg(tableView_Revenue.model()->headerData(column, Qt::Horizontal).toString());
+         out << "</tr></thead>\n";
+         for (int row = 0; row < rowCount; row++) {
+                 out << "<tr>";
+                 for (int column = 0; column < columnCount; column++) {
+                     if (!tableView_Revenue.isColumnHidden(column)) {
+                         QString data = tableView_Revenue.model()->data(tableView_Revenue.model()->index(row, column)).toString().simplified();
+                         out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                     }
+                 }
+                 out << "</tr>\n";
+             }
+             out <<  "</table>\n"
+                     "<br><br>"
+
+
+             "</body>\n"
+             "</html>\n";
+
+       QTextDocument *document = new QTextDocument();
+         document->setHtml(strStream);
+
+         QPrinter printer;
+
+         QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
+         if (dialog->exec() == QDialog::Accepted) {
+             document->print(&printer);
+         }
+
+         delete document;
+    }
+
+
+
+
+
