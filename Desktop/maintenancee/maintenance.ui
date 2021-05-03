@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>40</y>
      <width>681</width>
-     <height>421</height>
+     <height>411</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -408,6 +408,33 @@
         <string>Update</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>631</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Modifier équipement</string>
+       </property>
+      </widget>
+      <zorder>groupBox_2</zorder>
+      <zorder>label_13</zorder>
+      <zorder>label_14</zorder>
+      <zorder>label_15</zorder>
+      <zorder>label_16</zorder>
+      <zorder>label_17</zorder>
+      <zorder>label_18</zorder>
+      <zorder>lineEdit_idm_2</zorder>
+      <zorder>lineEdit_typem</zorder>
+      <zorder>lineEdit_nombrem</zorder>
+      <zorder>lineEdit_prixm</zorder>
+      <zorder>lineEdit_etatm</zorder>
+      <zorder>lineEdit_marquem</zorder>
+      <zorder>pushButton_updateequip</zorder>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -449,6 +476,23 @@
         <string>Spprimer</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>611</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Supprimer équipement</string>
+       </property>
+      </widget>
+      <zorder>groupBox_3</zorder>
+      <zorder>label_12</zorder>
+      <zorder>lineEdit_idsupp</zorder>
+      <zorder>pb_supprimer</zorder>
      </widget>
     </widget>
     <widget class="QLabel" name="label">
@@ -651,6 +695,31 @@
         </rect>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>631</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Ajouter Maintenance</string>
+       </property>
+      </widget>
+      <zorder>groupBox_4</zorder>
+      <zorder>label_9</zorder>
+      <zorder>label_10</zorder>
+      <zorder>label_11</zorder>
+      <zorder>lineEdit_idm</zorder>
+      <zorder>lineEdit_typep</zorder>
+      <zorder>pb_ajouterm</zorder>
+      <zorder>label_19</zorder>
+      <zorder>label_20</zorder>
+      <zorder>lineEdit_idemp</zorder>
+      <zorder>lineEdit_idequip</zorder>
+      <zorder>dateEdit</zorder>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -845,6 +914,31 @@
         </rect>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>621</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Modifier Maintenance</string>
+       </property>
+      </widget>
+      <zorder>groupBox_5</zorder>
+      <zorder>label_22</zorder>
+      <zorder>label_23</zorder>
+      <zorder>label_24</zorder>
+      <zorder>label_25</zorder>
+      <zorder>label_26</zorder>
+      <zorder>lineEdit_idmm</zorder>
+      <zorder>lineEdit_idempm</zorder>
+      <zorder>lineEdit_idequipm</zorder>
+      <zorder>lineEdit_typepm</zorder>
+      <zorder>pb_updatem</zorder>
+      <zorder>dateEdit_2</zorder>
      </widget>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
@@ -886,6 +980,23 @@
         <string>Supprimer</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>631</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Supprimer Maintenance</string>
+       </property>
+      </widget>
+      <zorder>groupBox_6</zorder>
+      <zorder>lineEdit_idm_3</zorder>
+      <zorder>label_21</zorder>
+      <zorder>pb_supprimerm</zorder>
      </widget>
     </widget>
     <widget class="QLabel" name="label_8">
@@ -938,6 +1049,42 @@
      </property>
     </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Play Music</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Mute</string>
+   </property>
   </widget>
  </widget>
  <resources/>

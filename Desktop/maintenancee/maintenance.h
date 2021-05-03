@@ -2,6 +2,8 @@
 #define MAINTENANCE_H
 #include "equipement.h"
 #include <QDialog>
+#include <QtMultimedia/QSound>
+#include <QMediaPlayer>
 
 namespace Ui {
 class maintenance;
@@ -41,8 +43,14 @@ private slots:
 
     void on_filtrer_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::maintenance *ui;
+    QSound *sound;
+
 };
 
 #endif // MAINTENANCE_H

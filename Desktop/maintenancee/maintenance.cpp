@@ -14,6 +14,9 @@
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QTextDocument>
+#include <QtMultimedia/QSound>
+#include <QMediaPlayer>
+
 
 
 maintenance::maintenance(QWidget *parent) :
@@ -22,6 +25,8 @@ maintenance::maintenance(QWidget *parent) :
 {
 Equipement E;
     ui->setupUi(this);
+    sound=new QSound("C:/Users/21626/Desktop/maintenancee/ChillingMusic.wav");
+
     ui->lineEdit_id->setValidator( new QIntValidator(0, 9999999, this));
     ui->tab_equipement->setModel(E.afficher());
 }
@@ -272,4 +277,14 @@ void maintenance::on_filtrer_clicked()
     Equipement E;
 
             ui->tab_equipement->setModel(E.filtrer());
+}
+
+void maintenance::on_pushButton_clicked()
+{
+    sound->play();
+}
+
+void maintenance::on_pushButton_2_clicked()
+{
+    sound->stop();
 }
