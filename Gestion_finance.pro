@@ -27,7 +27,7 @@ DEFINES += SMTP_BUILD
 CONFIG += c++11
 
 SOURCES += \
-    equipement.cpp \
+
         main.cpp \
     maintenance.cpp \
         mainwindow.cpp \
