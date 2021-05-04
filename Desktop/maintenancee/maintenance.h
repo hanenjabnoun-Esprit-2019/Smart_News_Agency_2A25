@@ -47,6 +47,8 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_stats_clicked();
+
 private:
     Ui::maintenance *ui;
     QSound *sound;

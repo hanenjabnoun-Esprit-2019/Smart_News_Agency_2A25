@@ -16,6 +16,7 @@
 #include <QTextDocument>
 #include <QtMultimedia/QSound>
 #include <QMediaPlayer>
+#include "notif.h"
 
 
 
@@ -58,6 +59,9 @@ ui->tab_equipement->setModel(E.afficher());
         QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                     QObject::tr("Ajout non effectué.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+    //notification
+           notif n ("Ajout avec succés","Equipement ajouté");
+           n.afficher();
 }
 
 
@@ -77,6 +81,9 @@ ui->tab_equipement->setModel(E.afficher());
         QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                     QObject::tr("Echec de suppression.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+    //notification
+           notif n ("Suppression avec succés","Equipement supprimé");
+           n.afficher();
 }
 
 void maintenance::on_pushButton_maintenance_clicked()
@@ -118,6 +125,9 @@ void maintenance::on_pushButton_updateequip_clicked()
 
     foreach(QLineEdit* le, findChildren<QLineEdit*>())
         {le->clear();}
+    //notification
+           notif n ("Modification avec succés","Equipement modifié");
+           n.afficher();
 }
 
 
@@ -143,6 +153,9 @@ void maintenance::on_pb_ajouterm_clicked()
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                         QObject::tr("Ajout non effectué.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
+        //notification
+               notif n ("Ajout avec succés","Maintenance ajoutée");
+               n.afficher();
 }
 
 void maintenance::on_pb_supprimerm_clicked()
@@ -163,6 +176,9 @@ void maintenance::on_pb_supprimerm_clicked()
                 QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                             QObject::tr("Echec de suppression.\n"
                                         "Click Cancel to exit."), QMessageBox::Cancel);
+            //notification
+                   notif n ("Suppression avec succés","Maintenance supprimée");
+                   n.afficher();
     }
 
 
@@ -195,6 +211,9 @@ void maintenance::on_pb_updatem_clicked()
 
         foreach(QLineEdit* le, findChildren<QLineEdit*>())
             {le->clear();}
+        //notification
+               notif n ("Modification avec succés","Maintenance modifiée");
+               n.afficher();
     }
 
 
@@ -288,3 +307,4 @@ void maintenance::on_pushButton_2_clicked()
 {
     sound->stop();
 }
+

@@ -128,5 +128,20 @@ QSqlQueryModel* Equipement:: filtrer()
             model->setHeaderData(5, Qt::Horizontal, QObject::tr("Marque"));
     return model;
 }
+int Equipement::calcul_equipement(int min, int max){
+    QSqlQuery query;
+    query.prepare("select *from EMPLOYES where salaire between :min and :max");
+    query.bindValue(":min",min);
+    query.bindValue(":max",max);
+    query.exec();
+
+    int total=0;
+    while(query.next()){
+        total++;
+    }
+
+    return total;
+}
+
 
 

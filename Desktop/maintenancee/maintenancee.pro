@@ -1,4 +1,5 @@
-QT       += core gui sql printsupport widgets multimedia
+QT       += core gui sql printsupport widgets multimedia charts
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,18 +15,20 @@ SOURCES += \
     main.cpp \
     maintenance.cpp \
     maintenance1.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    notif.cpp
 
 HEADERS += \
     connection.h \
     equipement.h \
     maintenance.h \
     maintenance1.h \
-    mainwindow.h
+    mainwindow.h \
+    notif.h
 
 FORMS += \
     maintenance.ui \
-    mainwindow.ui \
+    mainwindow.ui
 
 
 # Default rules for deployment.

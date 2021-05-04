@@ -31,6 +31,8 @@ public:
     bool modifier_equipement();
     QSqlQueryModel* trier();
     QSqlQueryModel* filtrer();
+    int calcul_equipement(int,int);
+
 ;
 
 private:

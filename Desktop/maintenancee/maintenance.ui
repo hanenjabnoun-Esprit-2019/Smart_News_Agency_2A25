@@ -41,7 +41,7 @@
       </font>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Ajouter">
       <attribute name="title">
@@ -68,6 +68,9 @@
           <height>16</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
         <property name="text">
          <string>ID :</string>
         </property>
@@ -80,6 +83,9 @@
           <width>55</width>
           <height>16</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string>Type :</string>
@@ -94,6 +100,9 @@
           <height>16</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
+        </property>
         <property name="text">
          <string>Nombre :</string>
         </property>
@@ -106,6 +115,9 @@
           <width>55</width>
           <height>16</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string>Prix :</string>
@@ -132,6 +144,9 @@
           <width>55</width>
           <height>16</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;MV Boli&quot;;</string>
         </property>
         <property name="text">
          <string>Marque :</string>
@@ -250,6 +265,19 @@
        </property>
        <property name="text">
         <string>Filtrer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="stats">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>280</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Statistiques</string>
        </property>
       </widget>
      </widget>
