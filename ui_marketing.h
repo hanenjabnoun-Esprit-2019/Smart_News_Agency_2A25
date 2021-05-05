@@ -60,6 +60,7 @@ public:
     QComboBox *comboBox_tri_pub;
     QLabel *label_35;
     QLabel *label_36;
+    QLabel *label_41;
     QWidget *Supprimer_2;
     QLabel *label_12;
     QPushButton *pushButton_supprimerPub;
@@ -126,6 +127,14 @@ public:
     QLineEdit *lineEdit_adresseEdit;
     QLineEdit *lineEdit_nomEdit;
     QPushButton *pushButton_modifierSP;
+    QWidget *tab;
+    QPushButton *Diode_on;
+    QPushButton *Diode_off;
+    QPushButton *diode_plus;
+    QPushButton *diode_moin;
+    QLabel *label_38;
+    QLabel *label_39;
+    QLabel *label_40;
     QPushButton *pushButton_Pb;
     QPushButton *pushButton_SP;
     QLabel *label_14;
@@ -136,7 +145,7 @@ public:
     {
         if (Marketing->objectName().isEmpty())
             Marketing->setObjectName(QStringLiteral("Marketing"));
-        Marketing->resize(787, 358);
+        Marketing->resize(794, 373);
         Marketing->setStyleSheet(QStringLiteral(""));
         stackedWidget_2 = new QStackedWidget(Marketing);
         stackedWidget_2->setObjectName(QStringLiteral("stackedWidget_2"));
@@ -234,7 +243,7 @@ public:
         Consulter_2->setObjectName(QStringLiteral("Consulter_2"));
         pushButton_afficherPub = new QPushButton(Consulter_2);
         pushButton_afficherPub->setObjectName(QStringLiteral("pushButton_afficherPub"));
-        pushButton_afficherPub->setGeometry(QRect(550, 230, 221, 31));
+        pushButton_afficherPub->setGeometry(QRect(520, 220, 221, 31));
         pushButton_afficherPub->setStyleSheet(QLatin1String("font: 15pt \"MV Boli\";\n"
 ""));
         tableView_pub = new QTableView(Consulter_2);
@@ -242,11 +251,11 @@ public:
         tableView_pub->setGeometry(QRect(20, 60, 491, 191));
         label_29 = new QLabel(Consulter_2);
         label_29->setObjectName(QStringLiteral("label_29"));
-        label_29->setGeometry(QRect(640, 60, 71, 81));
+        label_29->setGeometry(QRect(610, 100, 71, 81));
         label_29->setPixmap(QPixmap(QString::fromUtf8("../Load.png")));
         recherche = new QLineEdit(Consulter_2);
         recherche->setObjectName(QStringLiteral("recherche"));
-        recherche->setGeometry(QRect(372, 40, 131, 20));
+        recherche->setGeometry(QRect(372, 30, 131, 20));
         comboBox_tri_pub = new QComboBox(Consulter_2);
         comboBox_tri_pub->setObjectName(QStringLiteral("comboBox_tri_pub"));
         comboBox_tri_pub->setGeometry(QRect(130, 30, 69, 22));
@@ -255,7 +264,11 @@ public:
         label_35->setGeometry(QRect(60, 30, 61, 16));
         label_36 = new QLabel(Consulter_2);
         label_36->setObjectName(QStringLiteral("label_36"));
-        label_36->setGeometry(QRect(300, 40, 71, 20));
+        label_36->setGeometry(QRect(300, 30, 71, 20));
+        label_41 = new QLabel(Consulter_2);
+        label_41->setObjectName(QStringLiteral("label_41"));
+        label_41->setGeometry(QRect(890, 240, 71, 81));
+        label_41->setPixmap(QPixmap(QString::fromUtf8("../Load.png")));
         tabWidget_3->addTab(Consulter_2, QString());
         Supprimer_2 = new QWidget();
         Supprimer_2->setObjectName(QStringLiteral("Supprimer_2"));
@@ -443,10 +456,10 @@ public:
         label_28->setPixmap(QPixmap(QString::fromUtf8("../Load.png")));
         label_37 = new QLabel(Consulter);
         label_37->setObjectName(QStringLiteral("label_37"));
-        label_37->setGeometry(QRect(320, 30, 71, 16));
+        label_37->setGeometry(QRect(320, 20, 71, 16));
         recherche_sponsor = new QLineEdit(Consulter);
         recherche_sponsor->setObjectName(QStringLiteral("recherche_sponsor"));
-        recherche_sponsor->setGeometry(QRect(390, 30, 113, 20));
+        recherche_sponsor->setGeometry(QRect(390, 20, 113, 20));
         tabWidget_2->addTab(Consulter, QString());
         Supprimer = new QWidget();
         Supprimer->setObjectName(QStringLiteral("Supprimer"));
@@ -529,6 +542,30 @@ public:
         pushButton_modifierSP->setStyleSheet(QLatin1String("font: 14pt \"MV Boli\";\n"
 ""));
         tabWidget_2->addTab(Modifier, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        Diode_on = new QPushButton(tab);
+        Diode_on->setObjectName(QStringLiteral("Diode_on"));
+        Diode_on->setGeometry(QRect(110, 40, 75, 31));
+        Diode_off = new QPushButton(tab);
+        Diode_off->setObjectName(QStringLiteral("Diode_off"));
+        Diode_off->setGeometry(QRect(210, 40, 75, 31));
+        diode_plus = new QPushButton(tab);
+        diode_plus->setObjectName(QStringLiteral("diode_plus"));
+        diode_plus->setGeometry(QRect(120, 150, 75, 23));
+        diode_moin = new QPushButton(tab);
+        diode_moin->setObjectName(QStringLiteral("diode_moin"));
+        diode_moin->setGeometry(QRect(200, 150, 75, 23));
+        label_38 = new QLabel(tab);
+        label_38->setObjectName(QStringLiteral("label_38"));
+        label_38->setGeometry(QRect(440, 60, 151, 101));
+        label_39 = new QLabel(tab);
+        label_39->setObjectName(QStringLiteral("label_39"));
+        label_39->setGeometry(QRect(20, 50, 47, 13));
+        label_40 = new QLabel(tab);
+        label_40->setObjectName(QStringLiteral("label_40"));
+        label_40->setGeometry(QRect(20, 150, 71, 21));
+        tabWidget_2->addTab(tab, QString());
         pushButton_Pb = new QPushButton(Sponsor);
         pushButton_Pb->setObjectName(QStringLiteral("pushButton_Pb"));
         pushButton_Pb->setGeometry(QRect(190, 300, 151, 31));
@@ -557,8 +594,8 @@ public:
         retranslateUi(Marketing);
 
         stackedWidget_2->setCurrentIndex(0);
-        tabWidget_3->setCurrentIndex(1);
-        tabWidget_2->setCurrentIndex(1);
+        tabWidget_3->setCurrentIndex(3);
+        tabWidget_2->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Marketing);
@@ -585,6 +622,7 @@ public:
         label_29->setText(QString());
         label_35->setText(QApplication::translate("Marketing", "Trier par", Q_NULLPTR));
         label_36->setText(QApplication::translate("Marketing", "Recherche", Q_NULLPTR));
+        label_41->setText(QString());
         tabWidget_3->setTabText(tabWidget_3->indexOf(Consulter_2), QApplication::translate("Marketing", "Consulter", Q_NULLPTR));
         label_12->setText(QApplication::translate("Marketing", "Identifiant Publicit\303\251", Q_NULLPTR));
         pushButton_supprimerPub->setText(QApplication::translate("Marketing", "Supprimer", Q_NULLPTR));
@@ -631,6 +669,14 @@ public:
         label_19->setText(QApplication::translate("Marketing", "Nom", Q_NULLPTR));
         pushButton_modifierSP->setText(QApplication::translate("Marketing", "UPDATE", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(Modifier), QApplication::translate("Marketing", "Modifier", Q_NULLPTR));
+        Diode_on->setText(QApplication::translate("Marketing", "On", Q_NULLPTR));
+        Diode_off->setText(QApplication::translate("Marketing", "OFF", Q_NULLPTR));
+        diode_plus->setText(QApplication::translate("Marketing", "+", Q_NULLPTR));
+        diode_moin->setText(QApplication::translate("Marketing", "-", Q_NULLPTR));
+        label_38->setText(QString());
+        label_39->setText(QApplication::translate("Marketing", "Power", Q_NULLPTR));
+        label_40->setText(QApplication::translate("Marketing", "Luminosit\303\251", Q_NULLPTR));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("Marketing", "Smart", Q_NULLPTR));
         pushButton_Pb->setText(QApplication::translate("Marketing", "Publicit\303\251", Q_NULLPTR));
         pushButton_SP->setText(QApplication::translate("Marketing", "Sponsor", Q_NULLPTR));
         label_14->setText(QApplication::translate("Marketing", "SPONSOR", Q_NULLPTR));

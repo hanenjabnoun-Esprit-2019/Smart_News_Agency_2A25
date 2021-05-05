@@ -91,7 +91,7 @@
      <string notr="true">font: 11pt &quot;GOOD BRUSH&quot;;</string>
     </property>
     <property name="text">
-     <string>Comptabilité</string>
+     <string>Finance</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -126,38 +126,6 @@ color: rgb(255, 255, 255);</string>
       <pixmap>../news-agency111.png</pixmap>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>680</x>
-       <y>230</y>
-       <width>81</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../bestnews.png</pixmap>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>240</y>
-       <width>81</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../logosp.png</pixmap>
-     </property>
-    </widget>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
@@ -183,12 +151,57 @@ color: rgb(255, 255, 255);</string>
      <property name="title">
       <string/>
      </property>
+     <widget class="QQuickWidget" name="quickWidget">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-1</y>
+        <width>181</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="resizeMode">
+       <enum>QQuickWidget::SizeRootObjectToView</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>240</y>
+       <width>81</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../bestnews.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>250</y>
+       <width>81</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../logosp.png</pixmap>
+     </property>
     </widget>
     <zorder>groupBox_3</zorder>
     <zorder>label</zorder>
+    <zorder>groupBox_2</zorder>
     <zorder>label_2</zorder>
     <zorder>label_3</zorder>
-    <zorder>groupBox_2</zorder>
    </widget>
    <zorder>groupBox</zorder>
    <zorder>pushButton</zorder>
@@ -218,6 +231,13 @@ color: rgb(255, 255, 255);</string>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header>QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -44,15 +44,15 @@ public:
         ResponseTimeoutError,
         SendDataTimeoutError,
         AuthenticationFailedError,
-        ServerError,    // 4xx smtp error
-        ClientError     // 5xx smtp error
+        ServerError,
+        ClientError
     };
 
     enum ConnectionType
     {
         TcpConnection,
         SslConnection,
-        TlsConnection       // STARTTLS
+        TlsConnection
     };
 
     /* [0] --- */

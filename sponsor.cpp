@@ -95,14 +95,14 @@ QSqlQueryModel * Sponsor::Search_sponsor(QString input)
 }
 
 int Sponsor::sendMail() {
-       SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection); // Mail
+       SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
 
        smtp.setUser("best.news.agency@gmail.com");
        smtp.setPassword("achrafachraf");
 
        MimeMessage message;
 
-       EmailAddress sender("best.news.agency@gmail.com", "BESTNEWS");
+       EmailAddress sender("best.news.agency@gmail.com", "BEST NEWS");
        message.setSender(&sender);
 
        EmailAddress to("achraf.zarroug@esprit.tn", "Admin");

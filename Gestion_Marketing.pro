@@ -4,9 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql network
+QT       += core gui sql network printsupport widgets multimedia
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += serialport
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
 TARGET = BestNews
 TEMPLATE = app
@@ -44,7 +45,19 @@ SOURCES += \
     src/mimepart.cpp \
     src/mimetext.cpp \
     src/quotedprintable.cpp \
-    src/smtpclient.cpp
+    src/smtpclient.cpp \
+    arduino.cpp \
+    logistic.cpp \
+    studio.cpp \
+    programme.cpp \
+    maintenance1.cpp \
+    equipement.cpp \
+    maintenance.cpp \
+    notif.cpp \
+    depenses.cpp \
+    revenues.cpp \
+    finance.cpp \
+    employe.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -65,13 +78,32 @@ HEADERS += \
     src/quotedprintable.h \
     src/smtpclient.h \
     src/smtpexports.h \
-    src/SmtpMime
+    src/SmtpMime \
+    arduino.h \
+    logistic.h \
+    studio.h \
+    programme.h \
+    maintenance1.h \
+    equipement.h \
+    maintenance.h \
+    notif.h \
+    depenses.h \
+    revenues.h \
+    finance.h \
+    employe.h
 
 FORMS += \
         mainwindow.ui \
     marketing.ui \
+    logistic.ui \
+    maintenance.ui \
+    finance.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    translator.qrc \
+    qml.qrc

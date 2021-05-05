@@ -22,6 +22,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "QtQuickWidgets/QQuickWidget"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,10 +37,11 @@ public:
     QPushButton *pushButton_5;
     QGroupBox *groupBox;
     QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
     QGroupBox *groupBox_2;
     QGroupBox *groupBox_3;
+    QQuickWidget *quickWidget;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -80,25 +82,29 @@ public:
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(90, 20, 481, 241));
         label->setPixmap(QPixmap(QString::fromUtf8("../news-agency111.png")));
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(680, 230, 81, 61));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../bestnews.png")));
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(600, 240, 81, 51));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("../logosp.png")));
         groupBox_2 = new QGroupBox(groupBox);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(10, 30, 181, 261));
         groupBox_3 = new QGroupBox(groupBox);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(579, 20, 181, 181));
+        quickWidget = new QQuickWidget(groupBox_3);
+        quickWidget->setObjectName(QStringLiteral("quickWidget"));
+        quickWidget->setGeometry(QRect(-1, -1, 181, 191));
+        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+        label_2 = new QLabel(groupBox);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(560, 240, 81, 61));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../bestnews.png")));
+        label_3 = new QLabel(groupBox);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(660, 250, 81, 51));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../logosp.png")));
         groupBox_3->raise();
         label->raise();
+        groupBox_2->raise();
         label_2->raise();
         label_3->raise();
-        groupBox_2->raise();
         MainWindow->setCentralWidget(centralWidget);
         groupBox->raise();
         pushButton->raise();
@@ -129,13 +135,13 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", " Logistic", Q_NULLPTR));
         pushButton_marketing->setText(QApplication::translate("MainWindow", " Marketing", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "Maintenance", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("MainWindow", "Comptabilit\303\251", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Finance", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("MainWindow", "Page d'acceuil", Q_NULLPTR));
         label->setText(QString());
-        label_2->setText(QString());
-        label_3->setText(QString());
         groupBox_2->setTitle(QString());
         groupBox_3->setTitle(QString());
+        label_2->setText(QString());
+        label_3->setText(QString());
     } // retranslateUi
 
 };

@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "publicite.h"
 #include <QLabel>
-
+#include "arduino.h"
 
 namespace Ui {
 class Marketing;
@@ -51,11 +51,21 @@ private slots:
 
     void on_tableView_pub_doubleClicked(const QModelIndex &index);
 
+    void on_Diode_on_clicked();
+
+    void on_Diode_off_clicked();
+
+    void on_diode_plus_clicked();
+
+    void on_diode_moin_clicked();
+void update_label();
+
 private:
     Ui::Marketing *ui;
     Sponsor tmpsponsor;
     Publicite tmppuclicite;
-
+QByteArray data;
+Arduino A;
 
 };
 

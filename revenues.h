@@ -1,0 +1,46 @@
+#ifndef REVENUES_H
+#define REVENUES_H
+
+#include <QString>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QComboBox>
+class Revenues
+{
+private:
+    int id2;
+    QString date_r;
+    QString montant_r;
+    QString libelle_r;
+    int id_e2;
+public:
+    Revenues();
+    Revenues(int, QString, QString, QString, int);
+
+
+    int getId() const;
+    void setId(int value);
+    QString getDate() const;
+    void setDate(const QString &value);
+    QString getMontant() const;
+    void setMontant(const QString &value);
+    QString getLibelle() const;
+    void setLibelle(const QString &value);
+    int getId_e() const;
+    void setId_e(int value);
+
+    bool ajouter();
+    bool supprimer();
+    bool modifier();
+    QSqlQueryModel* afficher();
+    QSqlQueryModel* sort(QString);
+    QSqlQueryModel* search(QString);
+    QSqlQueryModel* afficher_idrevenue();
+
+    void sendMail();
+    void fillComboBoxId(QComboBox*);
+    void fillEmp(QComboBox*);
+    int autoId();
+};
+
+#endif // REVENUES_H

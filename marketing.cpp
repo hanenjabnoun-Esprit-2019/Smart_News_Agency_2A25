@@ -21,6 +21,7 @@ Marketing::Marketing(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
     ui->comboBox_1->setModel(tmpsponsor.afficher_idSP());
     ui->comboBox_suppSP->setModel(tmpsponsor.afficher_idSP());
 
@@ -35,6 +36,15 @@ Marketing::Marketing(QWidget *parent) :
     ui->comboBox_tri_pub->addItem("NUMERO");
     ui->comboBox_tri_pub->addItem("TYPE");
     ui->comboBox_tri_pub->addItem("DESCRIPTION");
+    int ret=A.connect_Arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
 }
 
 
@@ -58,19 +68,19 @@ void Marketing::on_pushButton_ajoutSP_clicked()
     QString adresse= ui->lineEdit_adresse->text();
   Sponsor S(id1, nom, numero, budget, adresse);
   bool test=S.ajouter_sponsor();
-    if (test)
-            {
-            QMessageBox::information(nullptr, QObject::tr("Ajouter un Sponsor"),
-                              QObject::tr("Sponsor ajouté.\n"
-                                          "Click Cancel to exit."), QMessageBox::Cancel);
-           S.sendMail();
-    }
-    else
-            {
-            QMessageBox::critical(nullptr, QObject::tr("Ajouter un Sponsor"),
-                              QObject::tr("Erreur !.\n"
-                                          "Click Cancel to exit."), QMessageBox::Cancel);
-            }
+  if (test)
+          {
+          QMessageBox::information(nullptr, QObject::tr("Ajouter un Sponsor"),
+                            QObject::tr("Sponsor ajouté.\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+         S.sendMail();
+  }
+  else
+          {
+          QMessageBox::critical(nullptr, QObject::tr("Ajouter un Sponsor"),
+                            QObject::tr("Erreur !.\n"
+                                        "Click Cancel to exit."), QMessageBox::Cancel);
+          }
     ui->comboBox_1->setModel(tmpsponsor.afficher_idSP()); //refresh ComboBox
     ui->comboBox_suppSP->setModel(tmpsponsor.afficher_idSP());
 
@@ -302,4 +312,40 @@ void Marketing::on_tableView_pub_doubleClicked(const QModelIndex &index) //EDIT 
     ui->tabWidget_3->setCurrentIndex(3);
 
     qDebug() << x;
+}
+
+void Marketing::on_Diode_on_clicked()
+{
+     A.Write_to_Arduino("1");
+}
+
+void Marketing::on_Diode_off_clicked()
+{
+     A.Write_to_Arduino("0");
+}
+
+void Marketing::on_diode_plus_clicked()
+{
+    A.Write_to_Arduino("2");
+
+}
+
+void Marketing::on_diode_moin_clicked()
+{
+    A.Write_to_Arduino("3");
+
+}
+void Marketing::update_label()
+{
+    data=A.read_from_Arduino();
+
+    if(data=="1")
+
+        ui->label_38->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1
+    // alors afficher ON
+
+    else if (data=="0")
+
+        ui->label_38->setText("OFF");   // si les données reçues de arduino via la liaison série sont égales à 0
+     //alors afficher ON
 }
